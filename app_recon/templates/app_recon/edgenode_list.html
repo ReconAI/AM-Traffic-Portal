@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Edge List</h1>
+
+{% if edgenode_list %}
+  <ul>
+
+  {% for edgenode in edgenode_list %}
+    <li>
+      <a href="{{ edgenode.get_absolute_url }}">
+      {{ edgenode }} ({{edgenode.Description}})
+      </a>
+    </li>
+  {% endfor %}
+
+ </ul>
+{% else %}
+  <p>There are no edges available.</p>
+{% endif %}
+        
+        
+        
+{% endblock %}
+

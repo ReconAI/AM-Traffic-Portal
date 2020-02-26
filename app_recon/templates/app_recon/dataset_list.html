@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Dataset List</h1>
+
+    {% if my_dataset_list %}
+    <ul>
+
+      {% for Dataset in my_dataset_list %}
+      <li>
+        <a href="{{ Dataset.get_absolute_url }}">{{ Dataset.BucketURL }}</a> ({{Dataset.Type}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no Datasets in the DB.</p>
+    {% endif %}       
+{% endblock %}

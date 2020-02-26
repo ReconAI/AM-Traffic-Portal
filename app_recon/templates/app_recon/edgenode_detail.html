@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %} {% block content %}
+
+<h1>Edge Node: {{ edgenode }} </h1>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <p>{{edgenode.Name}} ({{edgenode.Description}})</p>
+            <p>IP: {{ edgenode.IP_Address}}</p>
+            <p>S3 folder name: {{ edgenode.S3_Address}}</p>
+            <div class="form-group">
+                <label for="image_size">Image size</label>
+                <select class="form-control" id="image_size">
+                  <option>200</option>
+                  <option selected>320</option>
+                  <option>640</option>
+                  <option>720</option>
+                  <option>1024</option>
+                  <option>1280</option>
+                  <option>1440</option>
+                  <option>1920</option>
+                </select>
+            </div>
+            <button id="btn_show_rt" type="button" class="btn btn-primary">Start RealTime</button>
+        </div>
+
+        <div class="col-9">
+            Content: 
+            {% for file in file_list %}
+                <!--src={{ file.url }}-->
+            {% endfor %}
+                <div class="output_place">
+                    <img class="img_content"  />
+                <div/> 
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-10">
+    
+
+    <!--<dl>-->
+    <!--{% for book in author.book_set.all %}-->
+    <!--  <dt><a href="{% url 'book-detail' book.pk %}">{{book}}</a> ({{book.bookinstance_set.all.count}})</dt>-->
+    <!--  <dd>{{book.summary}}</dd>-->
+    <!--{% endfor %}-->
+    <!--</dl>-->
+
+</div>
+{% endblock %}
