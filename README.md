@@ -1,3 +1,5 @@
+** Obsolete - No longer in use. **
+
 # AM-Traffic-Portal
 Django project to create AM-Traffic-Portal user-interface.
 
